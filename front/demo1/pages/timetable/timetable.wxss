@@ -1,0 +1,335 @@
+/* pages/timetable/timetable.wxss */
+/* 通用样式 */
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: #f5f5f5;
+  }
+  
+  /* 登录界面样式 */
+  .login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40rpx;
+  }
+  
+  .logo {
+    margin-bottom: 60rpx;
+  }
+  
+  .logo image {
+    width: 200rpx;
+    height: 200rpx;
+  }
+  
+  .login-form {
+    width: 100%;
+    max-width: 500rpx;
+  }
+  
+  .form-group {
+    margin-bottom: 30rpx;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 10rpx;
+    font-size: 28rpx;
+    color: #333;
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 20rpx;
+    border: 1px solid #ddd;
+    border-radius: 10rpx;
+    font-size: 28rpx;
+  }
+  
+  .captcha-container {
+    display: flex;
+    gap: 20rpx;
+  }
+  
+  .captcha-container input {
+    flex: 1;
+  }
+  
+  .captcha-container image {
+    width: 200rpx;
+    height: 80rpx;
+    border-radius: 10rpx;
+  }
+  
+  .login-btn {
+    width: 100%;
+    padding: 20rpx;
+    background-color: #1e88e5;
+    color: white;
+    border: none;
+    border-radius: 10rpx;
+    font-size: 32rpx;
+    font-weight: bold;
+    margin-top: 20rpx;
+  }
+  
+  .tips {
+    margin-top: 20rpx;
+    text-align: center;
+    font-size: 24rpx;
+    color: #666;
+  }
+  
+  /* 课表界面样式 */
+  .timetable-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  
+  .timetable-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20rpx;
+    background-color: white;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .prev-week, .next-week, .refresh-btn, .settings-btn {
+    padding: 10rpx 20rpx;
+    background-color: transparent;
+    border: none;
+    font-size: 28rpx;
+  }
+  
+  .current-week {
+    font-size: 32rpx;
+    font-weight: bold;
+  }
+  
+  .timetable-content {
+    flex: 1;
+    overflow: auto;
+  }
+  
+  .weekdays {
+    display: flex;
+    background-color: white;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .weekday {
+    flex: 1;
+    text-align: center;
+    padding: 20rpx;
+    font-weight: bold;
+    border-right: 1px solid #eee;
+  }
+  
+  .weekday:last-child {
+    border-right: none;
+  }
+  
+  .timetable-grid {
+    display: flex;
+  }
+  
+  .time-slots {
+    width: 120rpx;
+    background-color: white;
+  }
+  
+  .time-slot {
+    height: 120rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10rpx;
+    border-bottom: 1px solid #eee;
+    font-size: 24rpx;
+  }
+  
+  .course-grid {
+    flex: 1;
+    position: relative;
+  }
+  
+  .course-row {
+    display: flex;
+  }
+  
+  .course-cell {
+    flex: 1;
+    height: 120rpx;
+    border-bottom: 1px solid #eee;
+    border-right: 1px solid #eee;
+    position: relative;
+  }
+  
+  .course-cell:last-child {
+    border-right: none;
+  }
+  
+  .course-card {
+    position: absolute;
+    left: 2rpx;
+    right: 2rpx;
+    top: 2rpx;
+    padding: 10rpx;
+    border-radius: 10rpx;
+    color: white;
+    font-size: 24rpx;
+    overflow: hidden;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .course-name {
+    font-weight: bold;
+    margin-bottom: 5rpx;
+  }
+  
+  .course-info {
+    font-size: 20rpx;
+    margin-bottom: 3rpx;
+  }
+  
+  .timetable-footer {
+    display: flex;
+    padding: 20rpx;
+    background-color: white;
+    border-top: 1px solid #eee;
+  }
+  
+  .logout-btn, .color-settings-btn {
+    flex: 1;
+    padding: 20rpx;
+    background-color: #1e88e5;
+    color: white;
+    border: none;
+    border-radius: 10rpx;
+    font-size: 28rpx;
+    margin: 0 10rpx;
+  }
+  
+  /* 弹窗样式 */
+  .course-detail-modal, .color-settings-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+  }
+  
+  .modal-content {
+    background-color: white;
+    border-radius: 20rpx;
+    width: 80%;
+    max-width: 600rpx;
+  }
+  
+  .modal-header {
+    padding: 30rpx;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .modal-header text {
+    font-size: 32rpx;
+    font-weight: bold;
+  }
+  
+  .close-btn {
+    background-color: transparent;
+    border: none;
+    font-size: 36rpx;
+    color: #666;
+  }
+  
+  .modal-body {
+    padding: 30rpx;
+  }
+  
+  .detail-item {
+    margin-bottom: 20rpx;
+    display: flex;
+    align-items: center;
+  }
+  
+  .detail-item .label {
+    width: 160rpx;
+    font-size: 28rpx;
+    color: #666;
+  }
+  
+  .detail-item .value {
+    flex: 1;
+    font-size: 28rpx;
+  }
+  
+  .detail-item input {
+    flex: 1;
+    padding: 20rpx;
+    border: 1px solid #ddd;
+    border-radius: 10rpx;
+    font-size: 28rpx;
+  }
+  
+  .modal-footer {
+    padding: 20rpx 30rpx;
+    border-top: 1px solid #eee;
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .save-btn {
+    padding: 15rpx 40rpx;
+    background-color: #1e88e5;
+    color: white;
+    border: none;
+    border-radius: 10rpx;
+    font-size: 28rpx;
+  }
+  
+  /* 颜色设置样式 */
+  .color-item {
+    margin-bottom: 30rpx;
+  }
+  
+  .color-item text {
+    display: block;
+    margin-bottom: 10rpx;
+    font-size: 28rpx;
+  }
+  
+  .color-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15rpx;
+  }
+  
+  .color-option {
+    width: 50rpx;
+    height: 50rpx;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid transparent;
+  }
+  
+  .color-option.selected {
+    border-color: #1e88e5;
+  }
+  

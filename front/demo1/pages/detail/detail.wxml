@@ -1,0 +1,16 @@
+<!-- 加载中状态 -->
+<view wx:if="{{isLoading}}">加载中...</view>
+
+<!-- 错误状态 -->
+<view wx:if="{{hasError}}">
+  <text>页面加载失败</text>
+  <button bindtap="onRetry">重试</button>
+</view>
+
+<!-- web-view 组件 -->
+<!-- pages/detail/detail.wxml -->
+<web-view 
+  src="{{link}}" 
+  binderror="onWebViewError" 
+  bindload="onWebViewLoad"
+></web-view>

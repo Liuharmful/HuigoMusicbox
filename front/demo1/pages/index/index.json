@@ -1,0 +1,8 @@
+{
+  "usingComponents": {},
+  "navigationBarTitleText": "河工大微就业",
+  "navigationBarBackgroundColor": "#800080",
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle":"light"
+  
+}

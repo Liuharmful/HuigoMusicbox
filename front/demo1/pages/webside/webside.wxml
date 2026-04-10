@@ -1,0 +1,3 @@
+<!--pages/webside/webside.wxml-->
+<!-- 用于显示教务系统网页 -->
+<web-view src="https://jwxs.hebut.edu.cn/index"></web-view>

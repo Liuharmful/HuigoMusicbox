@@ -1,0 +1,15 @@
+/* 基础样式重置 - 替换通配符 * 为具体组件 */
+page, view, text, button, image, navigator, input, scroll-view {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+  }
+  
+  page {
+    background-color: #f5f7fa;
+    color: #333;
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+  /* 其他样式保持不变... */

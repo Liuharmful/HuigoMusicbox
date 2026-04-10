@@ -1,0 +1,50 @@
+<view class="container">
+  <!-- 仅保留登录界面（无需课表相关内容） -->
+  <view class="login-container">
+    <view class="logo">
+      <image src="/image/hebut/hebut1.jpg" mode="widthFix"></image>
+    </view>
+    <view class="login-form">
+      <view class="form-group">
+        <label>学号</label>
+        <input 
+          type="text" 
+          placeholder="请输入学号" 
+          bindinput="onStudentIdInput" 
+          value="{{studentId}}"
+        ></input>
+      </view>
+      <view class="form-group">
+        <label>密码</label>
+        <input 
+          type="password" 
+          placeholder="请输入教务系统密码" 
+          bindinput="onPasswordInput" 
+          value="{{password}}"
+        ></input>
+      </view>
+      <view class="form-group">
+        <label>验证码</label>
+        <view class="captcha-container">
+          <input 
+            type="text" 
+            placeholder="请输入验证码" 
+            bindinput="onCaptchaInput" 
+            value="{{captcha}}"
+          ></input>
+          <!-- 验证码图片：点击刷新，绑定正确的图片路径 -->
+          <image 
+            src="{{captchaImg}}" 
+            mode="widthFix" 
+            bindtap="refreshCaptcha"
+            style="width: 120px; height: 45px; margin-left: 10px;"
+          ></image>
+        </view>
+      </view>
+      <button class="login-btn" bindtap="login">登录</button>
+      <view class="tips">
+        <text>初始密码为身份证后6位</text>
+      </view>
+    </view>
+  </view>
+</view>

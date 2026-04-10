@@ -1,0 +1,67 @@
+<view class="swiper-container">
+<swiper 
+  class="swiper" 
+  circular
+  autoplay="true"
+  indicator-dots="true"
+  interval="3000"
+>
+
+  <swiper-item>
+<image src="/image/hebut/hebut2.jpg" mode="aspectFit" class="swiper-img"/>
+  </swiper-item>
+  <swiper-item>
+    <image src="/image/hebut/hebut3.jpg" mode="aspectFill" class="swiper-img"/>
+  </swiper-item>
+  <swiper-item>
+    <image src="/image/hebut/hebut4.jpg" mode="aspectFill" class="swiper-img"/>
+  </swiper-item>
+</swiper>
+</view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 功能模块区域 -->
+<view class="module-row">
+  <!-- 就业模块 -->
+  <view class="module-item" bindtap="goToJobs">
+    <image class="module-icon" src="/image/hebut/hebut1.jpg" mode="aspectFit" />
+    <text class="module-text">就业</text>
+  </view>
+
+  <!-- 就业桥模块 -->
+  <view class="module-item" bindtap="goToEmploymentCenter">
+    <image class="module-icon" src="/image/hebut/hebut1.jpg" mode="aspectFit" />
+    <text class="module-text">就业桥</text>
+  </view>
+
+  <!-- 学校官网模块 -->
+  <view class="module-item" bindtap="goToHebutweb">
+    <image class="module-icon" src="/image/hebut/hebut1.jpg" mode="aspectFit" />
+    <text class="module-text">学校官网</text>
+  </view>
+</view>
+
+
+
+<image src="/image/hebut/hebut5.jpg" mode="aspectFit" class="photo_three"/>
+
+
+
+<!-- 底部品牌栏 -->
+<view class="footer-banner">
+  <image class="banner-logo" src="/image/hebut/hebut1.jpg" mode="aspectFit" />
+  <text class="banner-text">河北工业大学微就业</text>
+</view>

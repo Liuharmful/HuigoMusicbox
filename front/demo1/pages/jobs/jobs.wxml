@@ -1,0 +1,40 @@
+<!-- 加载状态 -->
+<view wx:if="{{loading}}" class="loading-container">
+  <view class="loading-spinner"></view>
+  <text class="loading-text">加载职位中...</text>
+</view>
+
+<!-- 错误提示 -->
+<view wx:if="{{error && !loading}}" class="error-container">
+  <view class="error-icon">⚠️</view>
+  <text class="error-text">{{error}}</text>
+  <button class="error-retry" bindtap="onRetry">重新加载</button>
+</view>
+
+<!-- 空状态 -->
+<view wx:if="{{!loading && !error && jobList.length === 0}}" class="empty-container">
+  <view class="empty-icon">🔍</view>
+  <text class="empty-text">暂无相关职位</text>
+  <text class="empty-subtext">试试其他搜索条件吧~</text>
+</view>
+
+<!-- 招聘列表 -->
+<view class="job-list" wx:else>
+  <view class="list-header">
+    <text class="list-title">找到 {{jobList.length}} 个职位</text>
+  </view>
+  
+  <view class="job-item" 
+        wx:for="{{jobList}}" 
+        wx:key="id" 
+        bindtap="goToDetail" 
+        data-link="{{item.detail_link}}"
+        hover-class="job-item-hover">
+    <!-- 仅保留职位标题和公司名称 -->
+    <view class="job-title">{{item.title}}</view>
+    <view class="job-company">
+      <text>公司：</text>
+      <text>{{item.company}}</text>
+    </view>
+  </view>
+</view>

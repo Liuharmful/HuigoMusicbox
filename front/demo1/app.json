@@ -1,0 +1,50 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/timetable/timetable",
+        "pages/webview/webview",
+        "pages/jobs/jobs",
+        "pages/detail/detail",
+        "pages/webside/webside",
+        "pages/web1/web1"
+    ],
+    "window": {
+        "navigationBarTitleText": "河工大微就业",
+        "navigationBarBackgroundColor": "#800080",
+        "enablePullDownRefresh": true,
+        "backgroundColor": "#800080",
+        "backgroundTextStyle": "light"
+    },
+    "tabBar": {
+        "color": "#666",
+        "selectedColor": "#1e88e5",
+        "backgroundColor": "#f9f9f9",
+        "borderStyle": "white",
+        "list": [
+            {
+                "pagePath": "pages/index/index",
+                "text": "首页",
+                "iconPath": "image/img.icons1.png",
+                "selectedIconPath": "image/img.icons2.png"
+            },
+            {
+                "pagePath": "pages/timetable/timetable",
+                "text": "教务系统",
+                "iconPath": "image/img.icons1.png",
+                "selectedIconPath": "image/img.icons2.png"
+            }
+        ]
+    },
+    "style": "v2",
+    "subPackages": [
+        {
+            "name": "subpkg1",
+            "root": "subpkg1",
+            "pages": [
+                "page1",
+                "page2"
+            ]
+        }
+    ],
+    "lazyCodeLoading": "requiredComponents"
+}

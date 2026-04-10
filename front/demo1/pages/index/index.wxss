@@ -1,0 +1,96 @@
+/* 模块行：横向均匀分布 */
+.module-row {
+    display: flex;
+    justify-content: space-around;
+    padding: 30rpx 20rpx;
+    flex-wrap: nowrap; /* 强制一行显示（三个模块刚好适配） */
+  }
+  
+  /* 单个模块：卡片化+hover动效 */
+  .module-item {
+    width: 30%; /* 三模块平分宽度 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #fff;
+    border-radius: 20rpx;
+    padding: 40rpx 0;
+    box-shadow: 0 6rpx 16rpx rgba(0, 0, 0, 0.06);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); /* 丝滑过渡 */
+  }
+  
+  /* 模块hover：放大+阴影加深 */
+  .module-item:hover {
+    transform: scale(1.08);
+    box-shadow: 0 10rpx 24rpx rgba(0, 0, 0, 0.12);
+  }
+  
+  /* 模块图标：统一尺寸 */
+  .module-icon {
+    width: 90rpx;
+    height: 90rpx;
+    margin-bottom: 24rpx;
+  }
+  
+  /* 模块文字：清晰可读 */
+  .module-text {
+    font-size: 34rpx;
+    color: #333;
+    font-weight: 500;
+  }
+  
+  /* 底部品牌栏：渐变背景+排版优化 */
+  .footer-banner {
+    display: flex;
+    align-items: center;
+    background: linear-gradient(90deg, #4080ff, #6699ff); /* 渐变增强质感 */
+    border-radius: 16rpx;
+    padding: 24rpx 32rpx;
+    margin: 30rpx 20rpx;
+    box-shadow: 0 6rpx 16rpx rgba(64, 128, 255, 0.2);
+  }
+  
+  /* 品牌栏校徽 */
+  .banner-logo {
+    width: 80rpx;
+    height: 80rpx;
+    margin-right: 24rpx;
+  }
+  
+  /* 品牌栏文字 */
+  .banner-text {
+    font-size: 36rpx;
+    color: #fff;
+    font-weight: 600;
+    text-shadow: 0 2rpx 4rpx rgba(0, 0, 0, 0.1); /* 文字阴影增强可读性 */
+  }
+
+
+/* WXSS */
+.swiper-container {
+  width: 100%; /* 父容器占满屏幕 */
+  overflow: hidden; /* 隐藏超出部分 */
+}
+
+.swiper {
+  width: 100%; /* swiper 占满父容器 */
+  height: 400rpx; /* 显式设置高度 */
+}
+
+.swiper-img {
+  width: 100%; /* 图片占满 swiper */
+  height: 100%;
+}
+
+
+
+
+
+.photo_three {
+    width: 100%; /* 宽度占满屏幕 */
+    height: 300px; /* 高度占满屏幕（100vh = 屏幕可视高度） */
+
+  }
+
+
+
