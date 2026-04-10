@@ -1,40 +1,55 @@
 // pages/detail/detail.js
 Page({
-    data: {
-      link: ""  // 存储要加载的链接
-    },
+  data: {
+    link: '',
+    isLoading: true,
+    hasError: false
+  },
 
-    // 列表页中跳转详情页的代码
-onJobClick(detailLink) {
-    // 对链接进行编码，避免特殊字符导致URL错误
-    const encodedLink = encodeURIComponent(detailLink);
-    wx.navigateTo({
-      url: `/pages/detail/detail?link=${encodedLink}`
+  onLoad(options) {
+    if (options.link) {
+      const link = decodeURIComponent(options.link);
+      this.setData({ 
+        link,
+        isLoading: false
+      });
+    } else {
+      this.setData({
+        hasError: true,
+        isLoading: false
+      });
+      wx.showToast({
+        title: '链接无效',
+        icon: 'none'
+      });
+    }
+  },
+
+  onWebViewError(e) {
+    console.error('web-view 加载错误:', e.detail);
+    this.setData({ hasError: true });
+    wx.showToast({
+      title: '页面加载失败',
+      icon: 'none'
     });
   },
 
+  onWebViewLoad() {
+    console.log('页面加载成功');
+    this.setData({ isLoading: false, hasError: false });
+  },
 
+  onRetry() {
+    this.setData({
+      hasError: false,
+      isLoading: true
+    });
+  },
 
-    onLoad(options) {
-      // 解析传递过来的链接（用decodeURIComponent还原）
-      const link = decodeURIComponent(options.link);
-      this.setData({ link });
-    },
-
-
-
-    onWebViewError(e) {
-        wx.showToast({
-          title: '页面加载失败',
-          icon: 'none'
-        });
-        console.error('web-view加载错误：', e.detail);
-      },
-      onWebViewLoad() {
-        console.log('页面加载成功');
-      }
-
-
-
-
-  }); 
+  onShareAppMessage() {
+    return {
+      title: '职位详情',
+      path: `/pages/detail/detail?link=${encodeURIComponent(this.data.link)}`
+    };
+  }
+});
